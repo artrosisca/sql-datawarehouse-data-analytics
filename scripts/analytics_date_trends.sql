@@ -25,7 +25,6 @@ GROUP BY YEAR(order_date), MONTH(order_date)
 ORDER BY YEAR(order_date), MONTH(order_date)
 
 --with datetrunc
---colocar em ordem mais facil, usam integral
 SELECT
 DATETRUNC(month, order_date) AS order_date, --fica na mesma coluna, ano e mes
 SUM(sales_amount) AS total_sales,
@@ -39,7 +38,6 @@ ORDER BY DATETRUNC(month, order_date)
 --/com datetrunc a data fica corretamente sorted, mas se eu uso o format ela eh transformada em string no mes/--
 
 --format personalizado
---colocar em ordem mais dificil, usa string
 SELECT
 FORMAT(order_date, 'yyyy-MMM') AS order_date, --fica na mesma coluna, ano e mes
 SUM(sales_amount) AS total_sales,
